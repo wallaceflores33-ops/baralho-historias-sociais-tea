@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --cor-prim: #2D6BE4;
+  --cor-sec:  #1A3A6E;
+  --bg-cream: #FAF6EB;
+  --bg-cream2: #F3ECD9;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-cream); font-family: 'Work Sans', system-ui, sans-serif; color: #111; }
+
+h1,h2,h3,.font-anton { font-family: 'Anton','Impact',sans-serif; letter-spacing: .01em; }
+
+.btn-cta {
+  display: block; width: 100%; max-width: 440px; margin: 0 auto;
+  background: var(--cor-prim); color: #fff; font-family: 'Anton','Impact',sans-serif;
+  font-size: 1.25rem; letter-spacing: .08em; text-align: center; text-transform: uppercase;
+  padding: 1.1rem 2rem; border-radius: 999px; cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,.18); transition: opacity .15s, transform .1s;
+  text-decoration: none;
+}
+.btn-cta:hover { opacity: .92; transform: scale(1.01); }
+.btn-cta:active { opacity: .85; transform: scale(.99); }
+
+/* Carrossel do hero */
+.car-track {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 8px; -webkit-overflow-scrolling: touch;
+}
+.car-track::-webkit-scrollbar { display: none; }
+.car-item {
+  flex: none; scroll-snap-align: center; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.14);
+}
+.car-item img { display: block; width: clamp(200px, 55vw, 320px); height: auto; }
+
+/* Bônus cards */
+.bonus-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+.bonus-num  { font-family: 'Anton','Impact',sans-serif; font-size: .7rem; letter-spacing: .12em; color: var(--cor-prim); text-transform: uppercase; }
+.blist { list-style: none; padding: 0; margin: 0; }
+.blist li::before { content: '→ '; color: var(--cor-prim); font-weight: 700; }
+
+/* Seção creme escuro */
+.bg-cream2 { background: var(--bg-cream2); }
